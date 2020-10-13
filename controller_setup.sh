@@ -1,10 +1,12 @@
 #! /bin/sh
 
-cp /vagrant/controller_interfaces /etc/network/interfaces
+cp /vagrant/controller_interfaces /etc/netplan/config.yaml
 cp /vagrant/hosts /etc/hosts
 cp /vagrant/grub /etc/default/grub
 
 update-grub
+
+netplan apply
 
 apt update -y
 apt upgrade -y
