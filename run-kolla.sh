@@ -17,9 +17,6 @@ pip install 'ansible<2.10'
 
 pip install kolla-ansible
 
-mkdir -p /etc/kolla
-chown $USER:$USER /etc/kolla
-
 cp -r /usr/local/share/kolla-ansible/etc_examples/kolla /etc/kolla
 cp /home/vagrant/kolla/globals.yml /etc/kolla
 mkdir -p /etc/kolla/config/nova
