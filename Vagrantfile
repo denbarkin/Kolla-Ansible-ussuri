@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
             node.vm.hostname = machine[:hostname]
             node.vm.provider "virtualbox" do |vb|
                 vb.customize ["modifyvm", :id, "--memory", machine[:ram], "--cpus", machine[:cpu]]
-                vb.customize ["modifyvm", :id, "--nic2", "hostonly", "--hostonlyadapter2", "VirtualBox Host-Only Ethernet Adapter"]
+                vb.customize ["modifyvm", :id, "--nic2", "hostonly", "--hostonlyadapter2", "vboxnet1"]
                 vb.customize ["modifyvm", :id, "--nic3", "natnetwork", "--nat-network3", "ProviderNetwork1", "--nicpromisc3", "allow-all"]
                 if machine[:hostname] == "block1"
                     file_to_disk = File.realpath( "." ).to_s + "/block1cinder.vdi"
